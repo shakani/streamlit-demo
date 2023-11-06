@@ -26,7 +26,7 @@ def fetch_stock_data(ticker: str, use_API: bool = True):
     if ticker[0] == '$':
         ticker = ticker[1:]
 
-    try: # API Call
+    if(use_API):
         url = f'https://www.alphavantage.co/query?function=TIME_SERIES_INTRADAY&symbol={ticker}&interval=60min&apikey={KEY}'
         r = requests.get(url)
         data = r.json()
@@ -40,8 +40,8 @@ def fetch_stock_data(ticker: str, use_API: bool = True):
         df.Date, df.Close = dates, closing_prices
 
         return df
-
-    except: # in case API limits our calls, use sample data
+    
+    else:
         with open('IBM.json') as f:
             data = json.load(f)
             return parse_json(data)
