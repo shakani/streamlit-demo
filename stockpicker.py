@@ -13,13 +13,12 @@ def parse_json(json_data):
     closing_prices = [float(json_data['Time Series (60min)'][t]['4. close']) for t in dates]
     dates = [datetime.datetime.strptime(d, '%Y-%m-%d %H:%M:%S') for d in dates]
 
-    df = pd.DataFrame(columns=['Data', 'Close'])
+    df = pd.DataFrame(columns=['Date', 'Close'])
     df.Date, df.Close = dates, closing_prices
-
     return df 
         
 
-def fetch_stock_data(ticker: str):
+def fetch_stock_data(ticker: str, use_API: bool = True):
     """
     Takes a stock ticker `ticker` and returns a DataFrame
     with the `Date` and `Close` price of the ticker.
@@ -49,4 +48,4 @@ def fetch_stock_data(ticker: str):
 
 
 if __name__ == '__main__':
-    print(fetch_stock_data('IBM'))
+    print(fetch_stock_data('IBM', use_API=False))

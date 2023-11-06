@@ -17,8 +17,8 @@ def app():
 
     stock_ticker = st.text_input('Stock Ticker (e.g. $IBM)', '$IBM')
     st.markdown(f'The stock you entered was {stock_ticker}')
-    
-    plot = plotter.get_stock_plot(stock_ticker)
+
+    plot = plotter.get_stock_plot(stock_ticker, use_API=False)
 
     st.pyplot(plot.get_figure())
 
