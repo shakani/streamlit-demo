@@ -2,8 +2,11 @@ import pandas as pd
 import requests 
 import datetime
 import json
+from dotenv import load_dotenv
+import os 
 
-KEY = 'LDPU7YT97H89MWHQ'
+load_dotenv() # loads environment variables
+KEY = os.environ['API_KEY']
 
 def parse_json(json_data):
     """
