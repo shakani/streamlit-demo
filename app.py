@@ -14,10 +14,13 @@ def app():
 # you may want to consider
 # [Flask](https://flask.palletsprojects.com/).""")
     # st.markdown("Here's another line of text")
-    stock_ticker = st.text_input('Stock Ticker (e.g. $APPL)', '$APPL')
-    st.markdown(f'The stock you entered was {stock_ticker}')
 
-    st.pyplot(plotter.plot.get_figure())
+    stock_ticker = st.text_input('Stock Ticker (e.g. $IBM)', '$IBM')
+    st.markdown(f'The stock you entered was {stock_ticker}')
+    
+    plot = plotter.get_stock_plot(stock_ticker)
+
+    st.pyplot(plot.get_figure())
 
     st.sidebar.markdown("""You can put things in the sidebar:
 * Like lists
