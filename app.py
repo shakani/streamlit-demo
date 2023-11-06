@@ -14,6 +14,7 @@ the markdown and other elements on your webpage,
 you may want to consider
 [Flask](https://flask.palletsprojects.com/).""")
     st.markdown("Here's another line of text")
+    st.pyplot(plotter.plot.get_figure())
 
     st.sidebar.markdown("""You can put things in the sidebar:
 * Like lists
