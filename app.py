@@ -1,5 +1,6 @@
 """Small example streamlit application."""
 import streamlit as st
+import plotter 
 
 def app():
     """Define main application entry point."""
@@ -12,6 +13,7 @@ them\".  If you want more flexibility for how to render
 the markdown and other elements on your webpage, 
 you may want to consider
 [Flask](https://flask.palletsprojects.com/).""")
+    st.markdown("Here's another line of text")
 
     st.sidebar.markdown("""You can put things in the sidebar:
 * Like lists
