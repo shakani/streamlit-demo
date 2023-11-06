@@ -12,5 +12,5 @@ def get_stock_plot(ticker: str, use_API: bool = True):
     return plot
 
 if __name__ == '__main__':
-    plot = get_stock_plot('IBM')
+    plot = get_stock_plot('IBM', use_API=False)
     plt.show()
