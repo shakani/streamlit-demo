@@ -9,7 +9,8 @@ def get_stock_plot(ticker: str):
     """
     #df = stockpicker.fetch_stock_data(ticker)
     df = stockpicker.fetch_stock_data(ticker)
-    return sns.scatterplot(data=df, x='Date', y='Close')
+    plot = sns.scatterplot(data=df, x='Date', y='Close').get
+    return plot.get_figure()
 
 # KEY = 'LDPU7YT97H89MWHQ'
 # SYMBOL = 'IBM'
